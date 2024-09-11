@@ -1,32 +1,30 @@
-package InsertionSort;
-import org.junit.Test;
+package MergeSort;
 
 import static org.junit.Assert.assertArrayEquals;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class InsertionSortTest {
+import org.junit.Test;
 
+public class MergeSortTest {
     @Test
-    public void testInsertionSortFromFile() throws IOException {
-        InsertionSort sorter = new InsertionSort();
-        
+    public void testMergeSortFromFile() throws IOException{
+        MergeSort mergeSort = new MergeSort();
+
         List<int[]> inputArrays = readFile("SortAlgorithmInput.txt");
         List<int[]> expectedSortedArrays = readFile("SortAlgorithmOutput.txt");
 
-        for (int i = 0; i < inputArrays.size(); i++) {
+        for(int i=0; i<inputArrays.size(); i++){
             int[] inputArray = inputArrays.get(i);
             int[] expectedArray = expectedSortedArrays.get(i);
 
-            System.out.println("Testing array " + (i + 1));
-            System.out.println("Input: " + Arrays.toString(inputArray));
-            System.out.println("Expected: " + Arrays.toString(expectedArray)); 
+            mergeSort.sort(inputArray, 0, inputArray.length - 1);
 
-            int[] sortedArray = sorter.sort(inputArray);
-
-            assertArrayEquals(expectedArray, sortedArray);
-
+            assertArrayEquals(inputArray, expectedArray);
         }
     }
 

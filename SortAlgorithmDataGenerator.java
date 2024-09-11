@@ -1,4 +1,4 @@
-package InsertionSort;
+
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
-public class TestDataGenerator {
+public class SortAlgorithmDataGenerator {
 
     public static void main(String[] args) throws IOException {
-        generateTestData("InsertionSortInput.txt", "InsertionSortOutput.txt", 100, 10);
+        generateTestData("SortAlgorithmInput.txt", "SortAlgorithmOutput.txt", 100, 10);
     }
 
     public static void generateTestData(String inputFileName, String outputFileName, int numArrays, int arraySize) throws IOException {
@@ -30,7 +30,7 @@ public class TestDataGenerator {
             writeArrayToFile(array, outputWriter);
         }
 
-        System.out.println("\n[InsertionSort] Тестний дата амжилттай бичигдлээ.\n");
+        System.out.println("\n[SortAlgorithmData] Тестний дата амжилттай бичигдлээ.\n");
 
         inputWriter.close();
         outputWriter.close();
